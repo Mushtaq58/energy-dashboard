@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌍 Global Energy Interactive Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">🌍 Global Energy Interactive Dashboard</h1>
+      <p class="hero-subtitle">Built with D3.js | Comsats DSC327</p>
+      <div class="energy-pulse"></div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <div class="nav-brand">📊 Charts</div>
+      <div class="nav-links">
+        <a href="#chart1" class="nav-link">📈 Economic</a>
+        <a href="#chart2" class="nav-link">🔄 Access</a>
+        <a href="#chart3" class="nav-link">⚡ Energy Mix</a>
+        <a href="#chart4" class="nav-link">💰 Efficiency</a>
+        <a href="#chart5" class="nav-link">💸 Financial</a>
+        <a href="#chart6" class="nav-link">🎯 Security</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="chart-section" id="chart1">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">📈 Economic Development vs Renewable Transition</h2>
+          <p class="chart-description">Do countries follow predictable renewable energy growth as they get richer? Explore the relationship between economic development and renewable energy adoption.</p>
+        </div>
+        <div class="chart-container">
+          <div id="connectedScatterPlot" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">⚡</div>
+              <p class="placeholder-title">Connected Scatter Plot Chart</p>
+              <p class="placeholder-subtitle">Interactive visualization showing economic vs renewable trends</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart2">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">🔄 Countries Improving Access Without Emissions Rise</h2>
+          <p class="chart-description">This animated chart shows each country's journey across years — toward high electricity access and low emissions.</p>
+        </div>
+        <div class="chart-container">
+          <div id="animatedBubbleChart" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">🌱</div>
+              <p class="placeholder-title">Animated Bubble Chart</p>
+              <p class="placeholder-subtitle">Watch countries evolve over time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart3">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">⚡ Energy Mix Evolution: Resource-Rich vs Resource-Poor</h2>
+          <p class="chart-description">Stacked area charts compare electricity sources over time between two country groups.</p>
+        </div>
+        <div class="chart-container">
+          <div id="energyMixStacked" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">📊</div>
+              <p class="placeholder-title">Stacked Area Chart</p>
+              <p class="placeholder-subtitle">Compare energy sources across regions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart4">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">💰 Energy Efficiency vs Prosperity</h2>
+          <p class="chart-description">This dual-axis chart compares energy intensity and GDP growth across time for each country.</p>
+        </div>
+        <div class="chart-container">
+          <div id="dualAxisChart" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">📈</div>
+              <p class="placeholder-title">Dual-Axis Line Chart</p>
+              <p class="placeholder-subtitle">Efficiency trends over time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart5">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">💸 Are Financial Flows Driving Energy Access?</h2>
+          <p class="chart-description">This scatter plot shows the relationship between total financial flows and improvements in electricity access per country.</p>
+        </div>
+        <div class="chart-container">
+          <div id="chart5_scatter" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">💸</div>
+              <p class="placeholder-title">Financial Flow Scatter Plot</p>
+              <p class="placeholder-subtitle">Money vs access correlation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart6">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">🌍 Renewable Energy by Country (Choropleth Map)</h2>
+          <p class="chart-description">
+            This map shows the percentage of renewable energy in each country's primary energy mix.
+          </p>
+        </div>
+        <div class="chart-container">
+          
+          <div id="chart6_map" class="chart">
+            <div class="chart-placeholder">
+              <div class="placeholder-icon">🌍</div>
+              <p class="placeholder-title">Global View</p>
+              <p class="placeholder-subtitle">Compare renewable energy across countries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add active nav link highlighting
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('.chart-section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- Chart scripts (placeholder for your D3.js charts) -->
+  <script src="charts/chart1_connected_scatter.js"></script>
+  <script src="charts/chart2_bubble_chart.js"></script>
+  <script src="charts/chart3_energy_mix_stack.js"></script>
+  <script src="charts/chart4_dual_axis_line.js"></script>
+  <script src="charts/chart5_scatter_flows_vs_access.js"></script>
+  <script src="charts/chart6_map_renewable_share.js"></script>
+</body>
+</html>
