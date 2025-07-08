@@ -55,7 +55,7 @@ It visualizes trends and insights from a global sustainable energy dataset (2015
 ## 🗂️ Data Source
 
 - Dataset: `cleaned_sustainable_energy_data.csv`
-- Original source: [World Bank](https://data.worldbank.org) / UN
+- Original source: [World Bank]((https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy)) / UN
 
 ---
 
