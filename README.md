@@ -5,8 +5,7 @@ It visualizes trends and insights from a global sustainable energy dataset (2015
 
 ## 🚀 Live Demo
 
-👉 [Click here to view the live project](https://yourusername.github.io/your-repo-name/)  
-_(Update this link once deployed)_
+👉 [Click here to view the live project](https://mushtaq58.github.io/energy-dashboard/)  
 
 ---
 
@@ -64,5 +63,5 @@ _(Update this link once deployed)_
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/mushtaq58/energy-dashboard.git
+   cd energy-dashboard
